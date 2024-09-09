@@ -2,6 +2,7 @@ package com.example.madt_2024_1;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +12,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView tvChangeText;
+    Button btnChangeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +26,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
-
-    public void onBtnChangeTextClick(View view) {
-        TextView tvChangeText = findViewById(R.id.tvChangeText);
-        tvChangeText.setText("HelloHelloHelloHelloHelloHelloHelloHelloHelloHello");
+        this.tvChangeText = findViewById(R.id.tvChangeText);
+        this.btnChangeText = findViewById(R.id.btnChangeText);
+        this.btnChangeText.setOnClickListener(view ->
+                tvChangeText.setText("This is the after Result"));
     }
 }
